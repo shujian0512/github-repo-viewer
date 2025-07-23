@@ -1,14 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-
-interface Repository {
-  id: number;
-  name: string;
-  description: string | null;
-  html_url: string;
-  stargazers_count: number;
-  forks_count: number;
-  language: string | null;
-}
+import { Repository } from '@/types/repository';
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
